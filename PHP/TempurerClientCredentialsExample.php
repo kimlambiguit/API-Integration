@@ -8,6 +8,8 @@
  *	Steps:
  *  1) Get an api key and secret for your company by going to the application list at http://www.tempurer.com/API/Applications
  *	2) Set the  CLIENT_ID and CLIENT_SECRET values below
+ *	
+ *	Note that multiple scopes can be requested (separated by a space) in an Access Token request.  This allows the token to be re-used for different API calls.
  *
  */
 
@@ -44,7 +46,7 @@
 
 	function SearchVacancies()
 	{
-		$apiurl = 'http://api.tempurer.com/services/vacancy.svc/search?query=test';
+		$apiurl = 'http://api.tempurer.com/services/vacancy.svc/search?query=Test&page=1';
 		$scopes = 'basic /services/vacancy.svc/search';
 		CallApiServiceUsingHttp($scopes, $apiurl);
 	}
@@ -60,7 +62,7 @@
 
 	function GetVacancy()
 	{
-		$apiurl = 'http://api.tempurer.com/services/vacancy.svc/getsummary/faf03b36-b42e-e211-8a1b-842b2b6577a5';
+		$apiurl = 'http://api.tempurer.com/services/vacancy.svc/get/faf03b36-b42e-e211-8a1b-842b2b6577a5';  // Set the guid of the vacancy you want to retrieve here.
 		$scopes = 'basic /services/vacancy.svc/get';
 		CallApiServiceUsingHttp($scopes, $apiurl);
 	}
@@ -93,7 +95,7 @@
 			// Call api service
 			$fetchParams = array('pagesize' => '1');
 			$data = $client->fetch($apiurl, $fetchParams);
-			var_dump($data, $data['result']);
+			var_dump($data);
 		}
 		else
 		{
