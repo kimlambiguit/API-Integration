@@ -1,0 +1,1 @@
+csc TempurerClientCredentialsExample.cs /reference:Newtonsoft.Json.dll /debug+
