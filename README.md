@@ -17,6 +17,7 @@ Get sample code
 ---------------
 
 Get the PHP or C# sample code from https://github.com/tempurer/API-Integration
+
 Enter your Consumer Key and Consumer Secret into the sample code in order to see an example of querying vacancies on the Tempurer platform
 
 
